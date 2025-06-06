@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talanta Zetech Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #d4fdd3, #b6e7f9);
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 128, 128, 0.3);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #0077b6;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f87;
+    }
+    .developer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #333;
+    }
+    .developer a img {
+      width: 24px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TALANTA ZETECH</h1>
+    <p>
+      Hello members,<br>
+      Welcome to Talanta Zetech – a group that brings people together with different talents and helps them grow. 
+      It’s also a place where you can discover your strengths, meet others who share your passion, and get the support you need to improve and shine. 
+      The club is here to take you to the next level.
+    </p>
+
+    <form id="talentForm">
+      <h2>BASIC PERSONAL INFORMATION</h2>
+      <label>Full Name:</label>
+      <input name="fullName" type="text" required>
+
+      <label>Date of Birth:</label>
+      <input name="dob" type="date" required>
+
+      <label>Gender:</label>
+      <select name="gender" required>
+        <option value="">--Select--</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label>Email Address:</label>
+      <input name="email" type="email" required>
+
+      <label>Phone Number:</label>
+      <input name="phone" type="tel" required>
+
+      <label>Country:</label>
+      <input name="country" type="text" required>
+
+      <label>Facebook Profile (optional):</label>
+      <input name="facebook" type="text">
+
+      <label>Instagram Handle (optional):</label>
+      <input name="instagram" type="text">
+
+      <h2>SCHOOL PERSONAL INFORMATION</h2>
+      <label>Name:</label>
+      <input name="schoolName" type="text" required>
+
+      <label>A.D.M:</label>
+      <input name="adm" type="text" required>
+
+      <label>Campus:</label>
+      <input name="campus" type="text" required>
+
+      <label>School Gmail:</label>
+      <input name="schoolGmail" type="email" required>
+
+      <h2>TALENT/SKILLS INFORMATION</h2>
+      <label>Talent Type:</label>
+      <input name="talentType" type="text" required>
+
+      <label>Skill Level:</label>
+      <select name="skillLevel" required>
+        <option value="">--Select--</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+
+      <label>Experience Duration:</label>
+      <input name="experience" type="text" required>
+
+      <label>Proof (Instagram, TikTok):</label>
+      <input name="proof" type="text" required>
+
+      <h2>PROGRAM SPECIFIC QUESTIONS</h2>
+      <label>Why do you want to join?</label>
+      <textarea name="reason" rows="3" required></textarea>
+
+      <label>Have you participated in other talent clubs?</label>
+      <textarea name="previousClubs" rows="2" required></textarea>
+
+      <label>What support are you looking for?</label>
+      <textarea name="supportNeeded" rows="2" required></textarea>
+
+      <h2>AVAILABILITY AND COMMITMENTS</h2>
+      <label>Are you available for sessions/workshops?</label>
+      <select name="availability" required>
+        <option value="">--Select--</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label>Communication Methods:</label>
+      <input name="contactMethod" type="text" required>
+
+      <h2>CONSENT AND DECLARATION</h2>
+      <label><input type="checkbox" name="confirmInfo" value="Yes" required> I confirm the information provided is accurate.</label>
+      <label><input type="checkbox" name="consentData" value="Yes" required> I give consent for my data to be used for registration and communication purposes.</label>
+      <label><input type="checkbox" name="agreeTerms" value="Yes" required> I agree to the terms and conditions of the program.</label>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="developer">
+      <p>Developed by 𝐂𝐋𝐄𝐌𝐎𝐇
+        <a href="https://wa.me/254759630579" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          0759630579
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("talentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector("button[type='submit']");
+      
+      // Disable button to prevent multiple submissions
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      fetch("https://script.google.com/macros/s/AKfycbwZ-gtWrIidOlPEWQpL9csPPUYBbCvCoylEDw50UYC48CK4s5gRG_Mm18_S_eJzEVcWFA/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("✅ Thank you for registering!");
+          form.reset();
+        } else {
+          alert("❌ Submission failed. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("❌ Error sending data.");
+      })
+      .finally(() => {
+        // Re-enable button and reset label
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit";
+      });
+    });
+  </script>
+</body>
+</html>
