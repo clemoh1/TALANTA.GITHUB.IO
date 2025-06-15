@@ -1,203 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cultural Week Feedback</title>
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/OOjs_UI_icon_feedback-ltr.svg/240px-OOjs_UI_icon_feedback-ltr.svg.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talanta Zetech Registration</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #d4f7d4 0%, #e6f7ff 100%);
-      color: #333;
+      background: linear-gradient(135deg, #d4fdd3, #b6e7f9);
+      padding: 20px;
     }
-    .loader, .main, .form-container, .suggestion-container, .thank-you { display: none; }
-    .loader {
-      height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 128, 128, 0.3);
     }
-    .loader h1 {
-      font-size: 28px;
-      font-weight: bold;
-      color: #004e92;
-      margin-bottom: 20px;
+    h1, h2 {
       text-align: center;
+      color: #0077b6;
     }
-    .progress-bar {
-      width: 80%; height: 20px; background: #000; border-radius: 10px;
-      overflow: hidden; margin-top: 20px;
-    }
-    .progress-bar-fill {
-      height: 100%; width: 0; background: linear-gradient(to right, #000000, #004e92); transition: width 0.1s ease;
-    }
-    .main, .form-container, .suggestion-container, .thank-you {
-      padding: 20px; max-width: 700px; margin: auto; text-align: center;
-    }
-    .main img {
-      width: 150px; margin-bottom: 20px;
-    }
-    button {
-      padding: 10px 20px; margin: 10px; border: none;
-      background: linear-gradient(to right, #000000, #004e92);
-      color: white; border-radius: 5px; cursor: pointer;
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
     }
     input, select, textarea {
-      width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px;
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    table {
-      width: 100%; border-collapse: collapse; margin-top: 20px;
-    }
-    td, th {
-      border: 1px solid #aaa; padding: 8px;
-    }
-    .contact-info {
+    button {
       margin-top: 20px;
-      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-    .contact-info a {
-      color: #25D366;
-      text-decoration: none;
-      font-weight: bold;
+    button:hover {
+      background-color: #005f87;
     }
-    .balloon {
-      position: fixed;
-      width: 50px;
-      height: 70px;
-      background: radial-gradient(circle, #f00, #0f0, #00f);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      opacity: 0.9;
-      animation: float 3s ease-in-out forwards;
-      z-index: 9999;
+    .developer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #333;
     }
-    @keyframes float {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-150px); opacity: 0; }
+    .developer a img {
+      width: 24px;
+      vertical-align: middle;
+      margin-left: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="loader">
-    <h1>SPORTS AND ENTERTAINMENT HOME PAGE</h1>
-    <h2>Loading...</h2>
-    <div class="progress-bar">
-      <div class="progress-bar-fill" id="bar"></div>
-    </div>
-  </div>
+  <div class="container">
+    <h1>TALANTA ZETECH</h1>
+    <p>
+      Hello members,<br>
+      Welcome to Talanta Zetech – a group that brings people together with different talents and helps them grow. 
+      It’s also a place where you can discover your strengths, meet others who share your passion, and get the support you need to improve and shine. 
+      The club is here to take you to the next level.
+    </p>
 
-  <div class="main">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Zetech_University_Logo.png/320px-Zetech_University_Logo.png" alt="Zetech University Logo">
-    <h1>Welcome to the Feedback Portal</h1>
-    <button onclick="showForm()">Register</button>
-  </div>
+    <form id="talentForm">
+      <h2>BASIC PERSONAL INFORMATION</h2>
+      <label>Full Name:</label>
+      <input name="fullName" type="text" required>
 
-  <div class="form-container">
-    <h2>Register Your Details</h2>
-    <input type="text" id="fname" placeholder="First Name" required>
-    <input type="text" id="sname" placeholder="Second Name" required>
-    <input type="text" id="adm" placeholder="Admission Number" required>
-    <select id="campus" required>
-      <option value="">Select Campus</option>
-      <option value="MANG'U TECHNOLOGY PARK">MANG'U TECHNOLOGY PARK</option>
-      <option value="TRC CAMPUS">TRC CAMPUS</option>
-      <option value="TOWN CAMPUS">TOWN CAMPUS</option>
-    </select>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <button onclick="nextToSuggestions()">Continue</button>
-  </div>
+      <label>Date of Birth:</label>
+      <input name="dob" type="date" required>
 
-  <div class="suggestion-container">
-    <h2>Suggest Events for Each Day</h2>
-    <table>
-      <tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-      <tr>
-        <td><textarea id="mon" required></textarea></td>
-        <td><textarea id="tue" required></textarea></td>
-        <td><textarea id="wed" required></textarea></td>
-        <td><textarea id="thu" required></textarea></td>
-        <td><textarea id="fri" required></textarea></td>
-      </tr>
-    </table>
-    <button onclick="submitForm(this)" id="submitBtn">Submit</button>
-  </div>
+      <label>Gender:</label>
+      <select name="gender" required>
+        <option value="">--Select--</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
 
-  <div class="thank-you">
-    <h2>Thank you for your time, bye 👋</h2>
-    <div class="contact-info">
-      Contact <a href="https://wa.me/254759630579" target="_blank">CLEMOH (0759 630579)</a> or <a href="https://wa.me/254748029400" target="_blank">ANOLD (0748 029400)</a> on WhatsApp<br>
-      <em>If the links do not work, search manually.</em>
+      <label>Email Address:</label>
+      <input name="email" type="email" required>
+
+      <label>Phone Number:</label>
+      <input name="phone" type="tel" required>
+
+      <label>Country:</label>
+      <input name="country" type="text" required>
+
+      <label>Facebook Profile (optional):</label>
+      <input name="facebook" type="text">
+
+      <label>Instagram Handle (optional):</label>
+      <input name="instagram" type="text">
+
+      <h2>SCHOOL PERSONAL INFORMATION</h2>
+      <label>Name:</label>
+      <input name="schoolName" type="text" required>
+
+      <label>A.D.M:</label>
+      <input name="adm" type="text" required>
+
+      <label>Campus:</label>
+      <input name="campus" type="text" required>
+
+      <label>School Gmail:</label>
+      <input name="schoolGmail" type="email" required>
+
+      <h2>TALENT/SKILLS INFORMATION</h2>
+      <label>Talent Type:</label>
+      <input name="talentType" type="text" required>
+
+      <label>Skill Level:</label>
+      <select name="skillLevel" required>
+        <option value="">--Select--</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+      </select>
+
+      <label>Experience Duration:</label>
+      <input name="experience" type="text" required>
+
+      <label>Proof (Instagram, TikTok):</label>
+      <input name="proof" type="text" required>
+
+      <h2>PROGRAM SPECIFIC QUESTIONS</h2>
+      <label>Why do you want to join?</label>
+      <textarea name="reason" rows="3" required></textarea>
+
+      <label>Have you participated in other talent clubs?</label>
+      <textarea name="previousClubs" rows="2" required></textarea>
+
+      <label>What support are you looking for?</label>
+      <textarea name="supportNeeded" rows="2" required></textarea>
+
+      <h2>AVAILABILITY AND COMMITMENTS</h2>
+      <label>Are you available for sessions/workshops?</label>
+      <select name="availability" required>
+        <option value="">--Select--</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label>Communication Methods:</label>
+      <input name="contactMethod" type="text" required>
+
+      <h2>CONSENT AND DECLARATION</h2>
+      <label><input type="checkbox" name="confirmInfo" value="Yes" required> I confirm the information provided is accurate.</label>
+      <label><input type="checkbox" name="consentData" value="Yes" required> I give consent for my data to be used for registration and communication purposes.</label>
+      <label><input type="checkbox" name="agreeTerms" value="Yes" required> I agree to the terms and conditions of the program.</label>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="developer">
+      <p>Developed by 𝐂𝐋𝐄𝐌𝐎𝐇
+        <a href="https://wa.me/254759630579" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          0759630579
+        </a>
+      </p>
     </div>
   </div>
 
   <script>
-    let percent = 0;
-    let bar = document.getElementById('bar');
-    let loader = document.querySelector('.loader');
-    let main = document.querySelector('.main');
+    document.getElementById("talentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector("button[type='submit']");
 
-    function launchBalloons() {
-      for (let i = 0; i < 10; i++) {
-        const balloon = document.createElement('div');
-        balloon.className = 'balloon';
-        balloon.style.left = Math.random() * 100 + 'vw';
-        balloon.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
-        document.body.appendChild(balloon);
-        setTimeout(() => balloon.remove(), 3000);
-      }
-    }
-
-    window.onload = () => {
-      loader.style.display = 'flex';
-      let interval = setInterval(() => {
-        percent += 2;
-        bar.style.width = percent + '%';
-        if (percent >= 100) {
-          clearInterval(interval);
-          loader.style.display = 'none';
-          main.style.display = 'block';
-          launchBalloons();
-        }
-      }, 60);
-    };
-
-    function showForm() {
-      document.querySelector('.main').style.display = 'none';
-      document.querySelector('.form-container').style.display = 'block';
-    }
-
-    function nextToSuggestions() {
-      const inputs = ['fname','sname','adm','campus','phone','email'];
-      for (const id of inputs) {
-        const el = document.getElementById(id);
-        if (!el.value) return alert('Please fill all fields.');
-      }
-      document.querySelector('.form-container').style.display = 'none';
-      document.querySelector('.suggestion-container').style.display = 'block';
-    }
-
-    function submitForm(btn) {
-      btn.disabled = true;
-      btn.textContent = 'Submitting...';
-
-      const fields = ['fname','sname','adm','campus','phone','email','mon','tue','wed','thu','fri'];
-      const data = fields.map(id => document.getElementById(id).value.trim());
-      if (data.some(v => v === '')) return alert("Fill all fields");
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
 
       fetch("https://script.google.com/macros/s/AKfycbxHSiZEmsggFmFJMujuQ0dOdQPcu8GQr2aMq2FSaGDeI3BPhtxvYFWq3uc9YbiNhpTyBg/exec", {
         method: "POST",
-        body: new URLSearchParams({
-          fname: data[0], sname: data[1], adm: data[2], campus: data[3],
-          phone: data[4], email: data[5], mon: data[6], tue: data[7],
-          wed: data[8], thu: data[9], fri: data[10]
-        })
+        body: formData
       })
-      .then(res => {
-        document.querySelector('.suggestion-container').style.display = 'none';
-        document.querySelector('.thank-you').style.display = 'block';
-        launchBalloons();
+      .then(response => {
+        if (response.ok) {
+          alert("✅ Thank you for registering!");
+          form.reset();
+        } else {
+          alert("❌ Submission failed. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("❌ Error sending data.");
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit";
       });
-    }
+    });
   </script>
 </body>
 </html>
